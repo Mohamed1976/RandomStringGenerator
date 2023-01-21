@@ -42,7 +42,7 @@ namespace RandomStringGeneratorLib.RandomStringGenerators
         /// The specified string <paramref name="length"/> is less than one.
         /// The <paramref name="allowedChars"/> array contains less than two characters, hence the charset is too small to create a random string.
         /// </exception>
-        public string GenerateString(char[] allowedChars, int length);
+        public string GenerateString(char[]? allowedChars, int length);
 
         /// <summary>
         /// Returns a random generated string based on the specified options.
@@ -83,6 +83,6 @@ namespace RandomStringGeneratorLib.RandomStringGenerators
         /// <exception cref="ArgumentOutOfRangeException">
         /// The <paramref name="source"/> exceeds the maximum length of 5000 characters.
         /// </exception>
-        public string ShuffleString(string source);
+        public string ShuffleString(string? source);
     }
 }

@@ -6,8 +6,8 @@ namespace RandomStringGeneratorLib.RandomStringGenerators
     /// </summary>
     public sealed class RandomStringGenerator
     {
-        private static IRandomStringGenerator _pseudoRandomStringGenerator = null;
-        private static IRandomStringGenerator _cryptographicRandomStringGenerator = null;
+        private static IRandomStringGenerator? _pseudoRandomStringGenerator = null;
+        private static IRandomStringGenerator? _cryptographicRandomStringGenerator = null;
         private static readonly object _lockPseudoRandomizer = new object();
         private static readonly object _lockCryptographicRandomizer = new object();
 

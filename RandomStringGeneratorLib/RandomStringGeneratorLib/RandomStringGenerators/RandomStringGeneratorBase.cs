@@ -65,7 +65,7 @@ namespace RandomStringGeneratorLib.RandomStringGenerators
             return rand;
         }
 
-        public virtual string GenerateString(char[] allowedChars, int length)
+        public virtual string GenerateString(char[]? allowedChars, int length)
         {
             int rand;
             StringBuilder sb = new StringBuilder();
@@ -184,7 +184,7 @@ namespace RandomStringGeneratorLib.RandomStringGenerators
             return rand;
         }
 
-        public virtual string ShuffleString(string source)
+        public virtual string ShuffleString(string? source)
         {
             if(string.IsNullOrEmpty(source))
             {
