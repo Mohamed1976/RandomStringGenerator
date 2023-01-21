@@ -30,7 +30,9 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>RandomStringGeneratorClient</_Parameter1>
     </AssemblyAttribute>
-
+      <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>RandomStringGeneratorTests</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
 
 
