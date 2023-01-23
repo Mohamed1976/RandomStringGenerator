@@ -12,7 +12,7 @@ The pseudo random string generator uses the `System.Random` class, which is fast
 
 ### Cryptographic Random
 
-The random string generator using the `System.Security.Cryptography.RandomNumberGenerator` class is considered more secure due to its use of a cryptographic random number generator, which provides higher security compared to the `System.Random` class. However, its performance may not be as fast as `System.Random` class.
+The random string generator uses the `System.Security.Cryptography.RandomNumberGenerator` class. This class is considered more secure due to its use of a cryptographic random number generator, which provides higher security compared to the `System.Random` class. However, its performance may not be as fast as `System.Random` class.
 
 ### Code Samples
 
@@ -40,6 +40,7 @@ int minDigits = 3;
 int minSpecialChars = 4;
 bool excludeSimilarLookingChars = false;
 int extraLength = 3;
+AllowedChars extraAllowedChars = AllowedChars.All;
 string rand = cryptographicRandomStringGenerator.GenerateString(
     minUpperCaseLetters,
     minLowerCaseLetters,
@@ -47,7 +48,7 @@ string rand = cryptographicRandomStringGenerator.GenerateString(
     minSpecialChars,
     excludeSimilarLookingChars,
     extraLength,
-    AllowedChars.All);
+    extraAllowedChars);
 Console.WriteLine(rand);
 
 // For a more fine grained control you can always pass an array of allowed characters.
