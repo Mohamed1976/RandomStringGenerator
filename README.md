@@ -8,11 +8,11 @@ The library offers two different random string generators, allowing for control 
 
 ### Pseudo Random
 
-The pseudo random string generator uses the `System.Random.Shared` class, which is fast but less secure for generating random strings. Therefore, it should not be used for generating passwords.
+The pseudo random string generator uses the `System.Random` class, which is fast but less secure for generating random strings. Therefore, it should not be used for generating passwords.
 
 ### Cryptographic Random
 
-The random string generator using the `System.Security.Cryptography.RandomNumberGenerator` class is considered more secure due to its use of a cryptographic random number generator, which provides higher security compared to the `System.Random.Shared` class. However, its performance may not be as fast as `System.Random.Shared` class.
+The random string generator using the `System.Security.Cryptography.RandomNumberGenerator` class is considered more secure due to its use of a cryptographic random number generator, which provides higher security compared to the `System.Random` class. However, its performance may not be as fast as `System.Random` class.
 
 ### Code Samples
 
