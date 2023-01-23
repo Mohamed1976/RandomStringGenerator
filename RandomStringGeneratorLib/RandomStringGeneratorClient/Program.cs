@@ -4,6 +4,51 @@ using RandomStringGeneratorLib.RandomStringGenerators;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 
+/* Usage examples  */
+bool excludeSimilarLookingChars;
+string rand;
+int length;
+
+//Get cryptographic random string generator.
+IRandomStringGenerator cryptographicRandomStringGenerator = RandomStringGenerator.CryptographicRandomizer;
+
+//Get pseudo random string generator.
+IRandomStringGenerator pseudoRandomStringGenerator = RandomStringGenerator.PseudoRandomizer;
+
+// Controlling the allowed characters in the generated random string is achieved using the enum AllowedChars.
+// In this example only AlphaNumeric (Letters | Digits) characters are used.
+excludeSimilarLookingChars = false;
+length = 6;
+rand = cryptographicRandomStringGenerator.GenerateString(AllowedChars.AlphaNumeric, length, excludeSimilarLookingChars);
+Console.WriteLine(rand);
+
+// For a more advanced scenario you can specify the minimum number of uppercase, lowercase, digits and special characters in the generated random string.  
+// The extraLength parameter in combination with the extraAllowedChars parameter allow you to add extra characters to the random string. 
+int minUpperCaseLetters = 1;
+int minLowerCaseLetters = 2;
+int minDigits = 3;
+int minSpecialChars = 4;
+excludeSimilarLookingChars = false;
+int extraLength = 3;
+rand = cryptographicRandomStringGenerator.GenerateString(
+    minUpperCaseLetters,
+    minLowerCaseLetters,
+    minDigits,
+    minSpecialChars,
+    excludeSimilarLookingChars,
+    extraLength,
+    AllowedChars.All);
+Console.WriteLine(rand);
+
+length = 6;
+// For a more fine grained control you can always pass an array of allowed characters.
+rand = cryptographicRandomStringGenerator.GenerateString(new char[] { 'w', 'o', 'r', 'l', 'd' }, length);
+Console.WriteLine(rand);
+
+//Randomly shuffle string
+rand = cryptographicRandomStringGenerator.ShuffleString("The Netherlands");
+Console.WriteLine(rand);
+
 /* Distributions trails */
 Console.WriteLine("PseudoRandomNumberGenerator");
 RandomNumberGeneratorComparisonDistributions(
