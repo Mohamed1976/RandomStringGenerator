@@ -31,6 +31,24 @@ int length = 6;
 string rand = cryptographicRandomStringGenerator.GenerateString(AllowedChars.AlphaNumeric, length, excludeSimilarLookingChars);
 Console.WriteLine(rand);
 
+// For a more advanced scenario you can specify the minimum number of uppercase, lowercase, digits and special characters in the generated random string.  
+// The extraLength parameter in combination with the extraAllowedChars parameter allow you to add extra characters to the random string. 
+int minUpperCaseLetters = 1;
+int minLowerCaseLetters = 2;
+int minDigits = 3;
+int minSpecialChars = 4;
+bool excludeSimilarLookingChars = false;
+int extraLength = 3;
+rand = cryptographicRandomStringGenerator.GenerateString(
+    minUpperCaseLetters,
+    minLowerCaseLetters,
+    minDigits,
+    minSpecialChars,
+    excludeSimilarLookingChars,
+    extraLength,
+    AllowedChars.All);
+Console.WriteLine(rand);
+
 // For a more fine grained control you can always pass an array of allowed characters.
 int length = 6;
 string rand = cryptographicRandomStringGenerator.GenerateString(new char[] { 'w', 'o', 'r', 'l', 'd' }, length);
