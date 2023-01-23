@@ -30,6 +30,7 @@ int minDigits = 3;
 int minSpecialChars = 4;
 excludeSimilarLookingChars = false;
 int extraLength = 3;
+AllowedChars extraAllowedChars = AllowedChars.All;
 rand = cryptographicRandomStringGenerator.GenerateString(
     minUpperCaseLetters,
     minLowerCaseLetters,
@@ -37,7 +38,7 @@ rand = cryptographicRandomStringGenerator.GenerateString(
     minSpecialChars,
     excludeSimilarLookingChars,
     extraLength,
-    AllowedChars.All);
+    extraAllowedChars);
 Console.WriteLine(rand);
 
 length = 6;
