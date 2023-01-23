@@ -19,6 +19,7 @@ IRandomStringGenerator pseudoRandomStringGenerator = RandomStringGenerator.Pseud
 // In this example only AlphaNumeric (Letters | Digits) characters are used.
 excludeSimilarLookingChars = false;
 length = 6;
+
 rand = cryptographicRandomStringGenerator.GenerateString(AllowedChars.AlphaNumeric, length, excludeSimilarLookingChars);
 Console.WriteLine(rand);
 
@@ -31,6 +32,7 @@ int minSpecialChars = 4;
 excludeSimilarLookingChars = false;
 int extraLength = 3;
 AllowedChars extraAllowedChars = AllowedChars.All;
+
 rand = cryptographicRandomStringGenerator.GenerateString(
     minUpperCaseLetters,
     minLowerCaseLetters,
@@ -41,8 +43,9 @@ rand = cryptographicRandomStringGenerator.GenerateString(
     extraAllowedChars);
 Console.WriteLine(rand);
 
-length = 6;
 // For a more fine grained control you can always pass an array of allowed characters.
+length = 6;
+
 rand = cryptographicRandomStringGenerator.GenerateString(new char[] { 'w', 'o', 'r', 'l', 'd' }, length);
 Console.WriteLine(rand);
 
@@ -99,10 +102,6 @@ for (int i = 0; i < sum.Length; i++)
 }
 
 return 0;
-
-
-
-
 
 static int[] FisherYates(int[] source)
 {
